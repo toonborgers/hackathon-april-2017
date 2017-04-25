@@ -1,3 +1,9 @@
+# Preparations
+
+1. Install docker machine: https://docs.docker.com/machine/
+2. Add the play with docker driver (optional): https://github.com/franela/docker-machine-driver-pwd 
+
+
 # Docker swarm setup blog
 
 http://lucjuggery.com/blog/?p=566
