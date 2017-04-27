@@ -1,11 +1,11 @@
-FROM java:8
+FROM java:8-alpine
 VOLUME /tmp
 
 WORKDIR /opt/jos
 ENV WORKDIR=/opt/jos
 
 ADD jos.jar jos.jar
-RUN bash -c 'touch $WORKDIR/jos.jar'
+RUN sh -c 'touch $WORKDIR/jos.jar'
 
 EXPOSE 8080
 

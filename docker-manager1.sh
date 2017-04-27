@@ -1,1 +1,0 @@
-eval export DOCKER_TLS_VERIFY="1" export DOCKER_HOST="tcp://pwd10_1_21_3-2375.host1.labs.play-with-docker.com:443" export DOCKER_CERT_PATH="/Users/toonb/.docker/machine/machines/manager1" export DOCKER_MACHINE_NAME="manager1" # Run this command to configure your shell: # eval $(docker-machine env manager1)
