@@ -7,7 +7,7 @@
 # Set up cluster
 
 1. Go to [Play with docker](http://play-with-docker.com)
-2. Run the script: `setup-swarm-pwd.sh <URL>` where <URL> is the full play-with-docker url
+2. Run the script: `setup-swarm-pwd.sh URL` where URL is the full play-with-docker url
 
 # Deploying the applications
 
@@ -15,7 +15,7 @@
 
 ### eureka 
 
-used for service discovery: `docker network create -d overlay eureka`
+Used for service discovery: `docker network create -d overlay eureka`
 
 ## Services
 
