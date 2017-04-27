@@ -11,6 +11,6 @@ fi
 
 rm -f *.jar
 
-cp build/libs/*.jar jos.jar
+cp build/libs/*.jar orders.jar
 
-docker build -t toonborgers/hackathon-jos:$VERSION .
+docker build -t toonborgers/hackathon-orders:$VERSION .

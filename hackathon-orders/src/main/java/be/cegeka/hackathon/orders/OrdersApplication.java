@@ -1,4 +1,4 @@
-package be.cegeka.hackathon.jos;
+package be.cegeka.hackathon.orders;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
-public class JosApplication {
+public class OrdersApplication {
 
     @GetMapping("/")
     public String helloWorld() throws UnknownHostException {
@@ -19,6 +19,6 @@ public class JosApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(JosApplication.class, args);
+        SpringApplication.run(OrdersApplication.class, args);
     }
 }
