@@ -25,13 +25,19 @@ Make sure that the docker images are deployed to docker hub!
 
 Netflix service discovery tool. Directory: hackathon-eureka
 
-`docker service create --name eureka --replicas 1 --network=eureka -p 8791:8791 toonborgers/eureka:<VERSION>`
+`docker service create --name eureka --replicas 1 --network=eureka -p 8791:8791 toonborgers/hackathon-eureka:<VERSION>`
+
+### Zuul
+
+Netflix edge service. Directory: hackathon-zuul
+
+`docker service create --name zuul --replicas 1 --network=eureka -p 8081:8081 -e "SPRING_PROFILES_ACTIVE=swarm" toonborgers/hackathon-zuul:<VERSION>`
 
 ### Orders
 
 Simple Spring Boot application
 
-`docker service create --name orders --replicas 1 --network=eureka -e "SPRING_PROFILES_ACTIVE=swarm"  toonborgers/hackathon-orders:<VERSION>`
+`docker service create --name orders --replicas 1 --network=eureka -e "SPRING_PROFILES_ACTIVE=swarm" toonborgers/hackathon-orders:<VERSION>`
 
 # Helpful commands
 
