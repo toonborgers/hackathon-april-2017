@@ -1,6 +1,6 @@
 # Define the number of managers/workers
 MANAGER=2
-WORKER=2
+WORKER=3
 
 # Create the Docker hosts
 for i in $(seq 1 $MANAGER); do docker-machine create --driver virtualbox manager$i; done

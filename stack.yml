@@ -1,0 +1,49 @@
+version: '3'
+services:
+  eureka:
+    image: toonborgers/hackathon-eureka:1
+    networks:
+      - eureka
+    deploy:
+      replicas: 1
+    ports:
+      - 8791:8791
+  zuul:
+    image: toonborgers/hackathon-zuul:1
+    networks:
+      - eureka
+    deploy:
+      replicas: 1
+    ports:
+      - 8081:8081
+    environment:
+      - SPRING_PROFILES_ACTIVE=swarm
+  zipkin:
+     image: toonborgers/hackathon-zipkin:1
+     networks:
+       - eureka
+     deploy:
+       replicas: 1
+     ports:
+       - 8083:8083
+     environment:
+       - SPRING_PROFILES_ACTIVE=swarm
+  orders:
+     image: toonborgers/hackathon-orders:1
+     networks:
+       - eureka
+     deploy:
+       replicas: 2
+     environment:
+       - SPRING_PROFILES_ACTIVE=swarm
+  customers:
+     image: toonborgers/hackathon-customers:1
+     networks:
+       - eureka
+     deploy:
+       replicas: 2
+     environment:
+       - SPRING_PROFILES_ACTIVE=swarm
+networks:
+  eureka:
+    driver: overlay

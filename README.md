@@ -35,6 +35,12 @@ Netflix edge service. Directory: hackathon-zuul
 
 By default, Zuul exposes all Eureka-registered services externally. To block this, add following property in the services `application.properties`: `eureka.instance.metadata-map.private=true`
 
+### Zipkin
+
+Trace the flow of traffic through the different microservices
+
+`docker service create --name zipkin --replicas 1 --network=eureka -p 8083:8083 -e "SPRING_PROFILES_ACTIVE=swarm" toonborgers/hackathon-zipkin:<VERSION>`
+
 ### Orders
 
 Simple Spring Boot application. Uses Feign to talk to the Customers  service
@@ -46,6 +52,11 @@ Simple Spring Boot application. Uses Feign to talk to the Customers  service
 Simple Spring Boot application
 
 `docker service create --name customers --replicas 1 --network=eureka -e "SPRING_PROFILES_ACTIVE=swarm" toonborgers/hackathon-customers:<VERSION>`
+
+## Stack
+
+A stack is a collection of services and networks, defined in a single yml file. To deploy:
+`docker stack deploy --compose-file stack.yml swarm`
 
 # Helpful commands
 
