@@ -33,6 +33,8 @@ Netflix edge service. Directory: hackathon-zuul
 
 `docker service create --name zuul --replicas 1 --network=eureka -p 8081:8081 -e "SPRING_PROFILES_ACTIVE=swarm" toonborgers/hackathon-zuul:<VERSION>`
 
+By default, Zuul exposes all Eureka-registered services externally. To block this, add following property in the services `application.properties`: `eureka.instance.metadata-map.private=true`
+
 ### Orders
 
 Simple Spring Boot application
