@@ -37,9 +37,15 @@ By default, Zuul exposes all Eureka-registered services externally. To block thi
 
 ### Orders
 
-Simple Spring Boot application
+Simple Spring Boot application. Uses Feign to talk to the Customers  service
 
 `docker service create --name orders --replicas 1 --network=eureka -e "SPRING_PROFILES_ACTIVE=swarm" toonborgers/hackathon-orders:<VERSION>`
+
+### Customers
+
+Simple Spring Boot application
+
+`docker service create --name customers --replicas 1 --network=eureka -e "SPRING_PROFILES_ACTIVE=swarm" toonborgers/hackathon-customers:<VERSION>`
 
 # Helpful commands
 
