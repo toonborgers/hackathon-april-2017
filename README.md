@@ -66,3 +66,7 @@ A stack is a collection of services and networks, defined in a single yml file. 
 # UCP (management console) -> Optional
 
 `docker run --rm -it --name ucp -v /var/run/docker.sock:/var/run/docker.sock docker/ucp install --force-insecure-tcp --san *.play-with-docker.com --host-address $(hostname -i) --admin-username toon --interactive`
+
+# Authentication (OAuth)
+
+http://blog.monkey.codes/how-to-use-jwt-and-oauth-with-spring-boot/

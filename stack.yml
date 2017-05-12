@@ -33,7 +33,7 @@ services:
      networks:
        - eureka
      deploy:
-       replicas: 2
+       replicas: 1
      environment:
        - SPRING_PROFILES_ACTIVE=swarm
   customers:
